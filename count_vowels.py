@@ -83,12 +83,7 @@ def are_anagrams(a: str, b: str)-> bool:
         hash_a[letter] = hash_a.get(letter, 0) + 1
     for letter in bStr:
         hash_b[letter] = hash_b.get(letter, 0) + 1
-    for letter in aStr:
-        if letter not in bStr:
-            return False
-        elif hash_a[letter] != hash_b[letter]:
-            return False   
-    return True
+    return hash_a == hash_b
         
 
         
@@ -101,7 +96,7 @@ def main():
     print(countWords(newlist))
     print(first_unique_char(newlist))
     print(frequentWord(words))
-    print(are_anagrams('table', 'labet'))
+    print(are_anagrams('table', 'labed'))
 
 if __name__ == "__main__":
     main()
